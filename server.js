@@ -23,7 +23,14 @@ app.use(function(req, res, next){
     next();
 });
 app.post("/index",index.dologin);
-
+app.get("/session_name",function (req,res) {
+    res.send(req.session)
+})
+app.get('/logout', function(req, res){
+    req.session.user = null;
+    req.session.error = null;
+    res.redirect('/');
+});
 app.listen(3030,()=>{
     console.log("服务器启动了~")
 });
