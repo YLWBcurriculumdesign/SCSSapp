@@ -1,12 +1,14 @@
 var express = require("express")
 let app = express();
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); //解析post过来的数据
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
+
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');//跨域访问
     next();
 });
+
 var session = require("express-session");
 app.use(session({
     secret:'secret',
