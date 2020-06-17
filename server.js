@@ -1,5 +1,6 @@
 var express = require("express")
 let app = express();
+let index = require("./controllers/index")
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -21,8 +22,8 @@ app.use(function(req, res, next){
     if (err) res.locals.message = '<div style="margin-bottom: 20px;color:red;">' + err + '</div>';
     next();
 });
+app.post("/index",index.dologin);
 
-
-app.listen(3000,()=>{
+app.listen(3030,()=>{
     console.log("服务器启动了~")
 });
