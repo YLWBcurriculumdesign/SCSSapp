@@ -16,8 +16,8 @@
 
 <div class ="top"  ><h1>恭喜用户<em ID="user_name" style="color:red"></em>，登陆成功！</h1></div>
 <script>
-    $.get("http://localhost:3030/myclass",function(data,status){
-        document.getElementById("user_name").innerHTML = session.user.username
+    $.get("http://localhost:3030/session_name",function(data,status){
+        document.getElementById("user_name").innerHTML = data;
     });
 </script>
 
@@ -33,7 +33,6 @@
                     <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" />
                 </svg>
             </label>
-
         </div>
         <!--        <input type="text">-->
     </div>

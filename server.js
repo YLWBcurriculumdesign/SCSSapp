@@ -1,6 +1,12 @@
 var express = require("express")
 let app = express();
-let index = require("./controllers/index")
+var session = require("express-session");
+app.use(session({
+    secret:'secret',
+    resave:true,
+    saveUninitialized:true,
+
+}));
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -8,23 +14,12 @@ app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');//跨域访问
     next();
 });
-var session = require("express-session");
-app.use(session({
-    secret:'secret',
-    resave:true,
-    saveUninitialized:false,
 
-}));
-app.use(function(req, res, next){
-    res.locals.user = req.session.user;
-    var err = req.session.error;
-    res.locals.message = '';
-    if (err) res.locals.message = '<div style="margin-bottom: 20px;color:red;">' + err + '</div>';
-    next();
-});
+let index = require("./controllers/index")
 app.post("/index",index.dologin);
 app.get("/session_name",function (req,res) {
-    res.send(req.session)
+    console.log(req.session)
+    res.send(req.session.user)
 })
 app.get('/logout', function(req, res){
     req.session.user = null;

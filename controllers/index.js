@@ -8,6 +8,7 @@ exports.dologin = (req,res)=>{
                 password:req.body.password
             };
             req.session.user = user;
+            console.log(req.session)
             res.sendStatus(200);
         }else {
             req.session.error = "用户名或密码不正确";
