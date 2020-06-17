@@ -1,5 +1,6 @@
 var express = require("express")
 let app = express();
+var jwt = require('jsonwebtoken');
 var session = require("express-session");
 app.use(session({
     secret:'secret',
@@ -18,8 +19,18 @@ app.use(function(req,res,next){
 let index = require("./controllers/index")
 app.post("/index",index.dologin);
 app.get("/session_name",function (req,res) {
-    console.log(req.session)
-    res.send(req.session.user)
+    let token = req.headers.token || req.query.token || req.body.token;
+    jwt.verify(token, 'daxunxun', function (err, decoded) {
+        if (err) {
+            console.log('验证shibai');
+        } else {
+            req.decoded = decoded;
+            console.log('验证成功', decoded);
+            next()
+        }
+    })
+    console.log(decoded)
+    res.send("hahahh")
 })
 app.get('/logout', function(req, res){
     req.session.user = null;
