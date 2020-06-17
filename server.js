@@ -12,7 +12,6 @@ app.use(session({
     secret:'secret',
     resave:true,
     saveUninitialized:false,
-
 }));
 app.use(function(req, res, next){
     res.locals.user = req.session.user;
@@ -23,6 +22,6 @@ app.use(function(req, res, next){
 });
 
 
-app.listen(3000,()=>{
+app.listen(3030,()=>{
     console.log("服务器启动了~")
 });
