@@ -1,7 +1,7 @@
 table {
     text-align: center;
-    width: 500px;
-    height: 200px;
+    width: 100%;
+    /*height: 50px;*/
     margin: 20px auto;
     border-collapse: collapse;
     font-family: Futura, Arial, sans-serif;
@@ -44,22 +44,4 @@ tr:last-child td:last-child {
 
 h1,h3 {
     text-align: center;
-}
-.top{
-    width: 100%;height: 80px;background-color: beige;left:0;top:0;position: fixed;text-align: center;
-}
-.main{
-    background: #E2E2E2;width: calc(100% - 60px);    padding-top: 80px;  padding-left: 60px;padding-bottom: 30px;text-align: center;
-}
-/*.d div{*/
-    /*text-align:center;padding-bottom: 30px;text-align:center;*/
-/*}*/
-#choosecourse{
-    margin:20px 0;
-    letter-spacing: .8em;
-    font-size: 18px;
-    text-align: center;
-    background: rgb(93, 218, 250);
-
-    font-family: Futura, Arial, sans-serif;
 }

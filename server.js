@@ -15,23 +15,10 @@ app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');//跨域访问
     next();
 });
-
+let student = require("./controllers/student")
 let index = require("./controllers/index")
 app.post("/index",index.dologin);
-app.get("/session_name",function (req,res) {
-    let token = req.headers.token || req.query.token || req.body.token;
-    jwt.verify(token, 'daxunxun', function (err, decoded) {
-        if (err) {
-            console.log('验证shibai');
-        } else {
-            req.decoded = decoded;
-            console.log('验证成功', decoded);
-            next()
-        }
-    })
-    console.log(decoded)
-    res.send("hahahh")
-})
+app.post("/student_message",student.student_message)
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;

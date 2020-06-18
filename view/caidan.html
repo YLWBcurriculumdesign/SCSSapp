@@ -49,11 +49,15 @@ body {
 
 </head>
 <body>
-
+<script>
+    var storage = window.sessionStorage;
+    var usersname =storage.getItem("username");
+    document.getElementById("user_name").innerHTML=usersname ;
+</script>
 <nav id="menu" class="menu">
 	<a href="http://www.mycodes.net">
 		<header class="menu-header">
-			<span class="menu-header-title">源码之家</span>
+			<span id="user_name" class="menu-header-title"></span>
 		</header>
 	</a>
 	<section class="menu-section">
