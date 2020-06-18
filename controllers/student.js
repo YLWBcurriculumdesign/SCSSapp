@@ -12,3 +12,9 @@ exports.Student_select_course =(req,res)=>{
         res.send(arr)
     })
 };
+exports.choosecourse=(req,res)=>{
+    sdb.choosecourse(req.body,function(info) {
+        res.send(info);
+    })
+    // res.redirect("/update");
+};

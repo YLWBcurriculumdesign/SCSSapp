@@ -60,7 +60,7 @@
     <section class="menu-section">
         <h3 class="menu-section-title">学生信息</h3>
         <ul class="menu-section-list">
-            <li><a style="color: #2fa0ec" href="#">基本信息</a></li>
+            <li><a  href="#">基本信息</a></li>
             <li><a href="#">修改个人信息</a></li>
             <li><a href="#">修改密码</a></li>
         </ul>
@@ -69,7 +69,7 @@
     <section class="menu-section">
         <h3 class="menu-section-title">网上选课</h3>
         <ul class="menu-section-list">
-            <li><a href="#">正选</a></li>
+            <li><a style="color: #2fa0ec" href="#">正选</a></li>
             <li><a href="#">退选</a></li>
         </ul>
     </section>
@@ -87,10 +87,10 @@
     document.getElementById("user_name").innerHTML="欢迎用户"+usersname ;
 </script>
 <main id="main" class="panel">
-    <button class="btn-hamburger js-slideout-toggle">
+    <button style=" left: 0;top: 0; position: fixed;" class="btn-hamburger js-slideout-toggle">
         <span class="tooltip">点击打开</span>
     </button>
-    <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
+    <div id="the_main_div" >
         <table id="table_id">
             <tr>
                 <th>课程编号</th>
@@ -106,28 +106,33 @@
         <input style="border: blueviolet 1px solid;border-radius: 4px;background-color:  rgb(93, 218, 250);" id="choosecourse" type="button" onclick="choosecourse()" value="正选">
     </div>
 </main>
-<script language="javascript">
-    $.get("http://localhost:3030/Student_select_course", {
-    }, function (data) {  // data是服务器返回的数据
-        // alert(data.length)
-        var table = document.getElementById("table_id");
-        for (var i=0;i<data.length;i++){
-           var tr = table.insertRow();
-            var td = tr.insertCell();
-            td.innerText =data[i].Cid ;
-            td.id="Cid"+i;
-            tr.insertCell().innerHTML=data[i].Cname;
-            tr.insertCell().innerHTML=data[i].Ctype;
-            tr.insertCell().innerHTML=data[i].Cweek;
-            tr.insertCell().innerHTML=data[i].Ctime;
-            tr.insertCell().innerHTML=data[i].Tname;
-            tr.insertCell().innerHTML=data[i].Cintroduction;
-            var td = tr.insertCell();
-            td.innerHTML='<input id='+i+' type="checkbox">'
+<script type="text/javascript">
+    var username =window.sessionStorage.getItem("username");
+    if (username == null){
+        alert("没有登录");
+        location.href='index.html'
+    }else {
+        $.get("http://localhost:3030/Student_select_course", {}, function (data) {  // data是服务器返回的数据
+            // alert(data.length)
+            var table = document.getElementById("table_id");
+            for (var i = 0; i < data.length; i++) {
+                var tr = table.insertRow();
+                var td = tr.insertCell();
+                td.innerText = data[i].Cid;
+                td.id = "Cid" + i;
+                tr.insertCell().innerHTML = data[i].Cname;
+                tr.insertCell().innerHTML = data[i].Ctype;
+                tr.insertCell().innerHTML = data[i].Cweek;
+                tr.insertCell().innerHTML = data[i].Ctime;
+                tr.insertCell().innerHTML = data[i].Tname;
+                tr.insertCell().innerHTML = data[i].Cintroduction;
+                var td = tr.insertCell();
+                td.innerHTML = '<input name="aa"  type="checkbox" value="' + i + '">'
 
-        }
+            }
 
-    });
+        });}
+
 </script>
 <script type="text/javascript" src="../public/js/Student_select_course.js"></script>
 
