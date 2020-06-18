@@ -6,7 +6,7 @@
                 var cid = "Cid" + i;
                 CID = document.getElementById(cid).innerHTML;
                 var username =window.sessionStorage.getItem("username");
-                var data = { "username": username," CID":CID}
+                var data = { "username": username,"CID":CID}
                 $.ajax({
                     url:'http://localhost:3030/choosecourse',
                     type:'POST',
