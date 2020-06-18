@@ -80,43 +80,40 @@
           };
           if (data.type=="2"){
               $.ajax({
-                  url:'index',
+                  url:'http://localhost:3030/index',
                   type:'POST',
                   data:data,
                   success:function(data,status){
-                      if(status == 'success'){
-                          // location.href='Teacher';
-                          // location.href='success';
-                          alert("教师")
-                      }
-                  },
-                  error:function(data,status,e){
-                      if(status == "error"){
-                          // location.href='success';
-                          // location.href='/defeat';
+                      if(data.message == '登陆成功'){
+                          // alert($('#user').val())
+                          var storage = window.sessionStorage;
+                          storage.setItem('username',$('#user').val());
+                          location.href='Teacher.html';
+                          // window.local // location.href='Select_course';
+                          // alert("学生")
+                      }else {
                           alert("账号密码错误")
                       }
-                  }
+                  },
               });
           };
           if (data.type=="0"){
               $.ajax({
-                  url:'index',
+                  url:'http://localhost:3030/index',
                   type:'POST',
                   data:data,
                   success:function(data,status){
-                      if(status == 'success'){
-
-                          // location.href='Admin';
-                          alert("管理员")
-                      }
-                  },
-                  error:function(data,status,e){
-                      if(status == "error"){
-                          // location.href='/defeat';
+                      if(data.message == '登陆成功'){
+                          // alert($('#user').val())
+                          var storage = window.sessionStorage;
+                          storage.setItem('username',$('#user').val());
+                          location.href='Student_home.html';
+                          // window.local // location.href='Select_course';
+                          // alert("学生")
+                      }else {
                           alert("账号密码错误")
                       }
-                  }
+                  },
               });
           }
 
