@@ -1,4 +1,4 @@
-var username =window.sessionStorage.getItem("username");
+    var username =window.sessionStorage.getItem("username");
 if (username == null){
     alert("没有登录");
     location.href='index.html'
