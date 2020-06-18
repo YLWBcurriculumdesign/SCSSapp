@@ -13,14 +13,11 @@ exports.dologin = (req,res)=>{
             req.session.user = user;
             console.log(req.session)
             res.send({
-                code: '10010',
                 message: '登陆成功',
-                session:user
             });
         }else {
             req.session.error = "用户名或密码不正确";
             res.send({
-                code: '10000',
                 message: '密码错误',
             });
         }
