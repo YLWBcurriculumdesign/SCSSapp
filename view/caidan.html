@@ -7,10 +7,10 @@
 <title>手机移动端左侧滑动菜单</title>
 
 <!--可无视-->
-<link rel="stylesheet" type="text/css" href="../../../迅雷下载/模板/slideout/css/default.css" />
+<link rel="stylesheet" type="text/css" href="../public/css/default.css" />
 
 <!--必要样式-->
-<link rel="stylesheet" type="text/css" href="../../../迅雷下载/模板/slideout/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="../public/css/styles.css" />
 
 <style type="text/css">
 body {
@@ -90,7 +90,7 @@ body {
 	</button>
 </main>
 
-<script type="text/javascript" src="../../../迅雷下载/模板/slideout/js/slideout.min.js"></script>
+<script type="text/javascript" src="../public/js/slideout.min.js"></script>
 <script type="text/javascript">
 var slideout = new Slideout({
 	'panel': document.getElementById('main'),
@@ -106,7 +106,7 @@ var slideout = new Slideout({
   document.querySelector('.menu').addEventListener('click', function(eve) {
 	if (eve.target.nodeName === 'A') { slideout.close(); }
   });
- function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length&&(t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
+ function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length && (t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
 window.onload = function(){
 	aload();
 	document.querySelector('.iphone').className += ' shown';
