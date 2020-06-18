@@ -18,7 +18,8 @@ app.use(function(req,res,next){
 let student = require("./controllers/student")
 let index = require("./controllers/index")
 app.post("/index",index.dologin);
-app.post("/student_message",student.student_message)
+app.post("/student_message",student.student_message);
+app.get("/Student_select_course",student.Student_select_course);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;
