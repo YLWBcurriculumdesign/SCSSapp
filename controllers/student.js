@@ -18,3 +18,9 @@ exports.choosecourse=(req,res)=>{
     })
     // res.redirect("/update");
 };
+exports.myclass = (req,res)=>{
+
+    sdb.getStudentcourse(req.body,function(info){
+        res.send(info)
+    })
+};

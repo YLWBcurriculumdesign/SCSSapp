@@ -20,7 +20,8 @@ let index = require("./controllers/index")
 app.post("/index",index.dologin);
 app.post("/student_message",student.student_message);
 app.get("/Student_select_course",student.Student_select_course);
-app.post("/choosecourse",student.choosecourse)
+app.post("/choosecourse",student.choosecourse);
+app.post("/myclass",student.myclass);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;
