@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师</title>
+
+    <!--可无视-->
+    <link rel="stylesheet" type="text/css" href="../public/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/main.css">
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="../public/css/styles.css" />
+
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slideout-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+            width: 256px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
+        }
+
+        .slideout-panel {
+            position:relative;
+            z-index: 1;
+        }
+
+        .slideout-open,
+        .slideout-open body,
+        .slideout-open .slideout-panel {
+            overflow: hidden;
+        }
+
+        .slideout-open .slideout-menu {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<nav id="menu" class="menu">
+    <header class="menu-header">
+        <span id="user_name" class="menu-header-title"></span>
+    </header>
+    </a>
+    <section class="menu-section">
+        <h3 class="menu-section-title">教师信息</h3>
+        <ul class="menu-section-list">
+            <li><a style="color: #2fa0ec"  href="">基本信息</a></li>
+            <li><a href="#">修改个人信息</a></li>
+            <li><a href="#">修改密码</a></li>
+        </ul>
+    </section>
+
+    <section class="menu-section">
+        <h3 class="menu-section-title">课程管理</h3>
+        <ul class="menu-section-list">
+            <li><a  href="">我的课程</a></li>
+            <li><a href="">发布课程</a></li>
+            <li><a  href="">修改课程</a></li>
+            <li><a  href="">删除课程</a></li>
+        </ul>
+    </section>
+
+    <section class="menu-section">
+        <h3 class="menu-section-title">退出系统</h3>
+        <ul class="menu-section-list">
+            <li><a href="index.html">退出</a></li>
+        </ul>
+    </section>
+</nav>
+<script>
+    var storage = window.sessionStorage;
+    var usersname =storage.getItem("username");
+    document.getElementById("user_name").innerHTML="欢迎用户"+usersname ;
+</script>
+<main id="main" class="panel">
+    <button style=" left: 0;top: 0; position: fixed;" class="btn-hamburger js-slideout-toggle">
+        <span class="tooltip">点击打开</span>
+    </button>
+    <div id="the_main_div"  style="left: 0;top:50px; position: fixed;text-align: center">
+        <table id="table_id">
+            <p>2020上学期课程表</p>
+            <tr>
+                <th> </th>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+            </tr>
+
+
+        </table>
+    </div>
+</main>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript" src="../public/js/student_my_course.js"></script>
+
+<script type="text/javascript" src="../public/js/slideout.min.js"></script>
+<script type="text/javascript">
+    var slideout = new Slideout({
+        'panel': document.getElementById('main'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+    });
+
+    document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
+        slideout.toggle();
+    });
+
+    document.querySelector('.menu').addEventListener('click', function(eve) {
+        if (eve.target.nodeName === 'A') { slideout.close(); }
+    });
+    function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length && (t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
+    window.onload = function(){
+        aload();
+        document.querySelector('.iphone').className += ' shown';
+    }
+</script>
+
+</body>
+</html>
