@@ -9,7 +9,6 @@
       <link rel="shortcut icon" href="../public/img/favicon.ico">
 </head>
 <body>
-<%- message %>
   <h1>大学生网上选课系统</h1>
   <div class="bgImg">
     <img src="../public/img/LOGO2.png" alt="logo">
@@ -66,7 +65,7 @@
                   data:data,
                   success:function(data,status){
                       if(data.message == '登陆成功'){
-                          // alert($('#user').val())
+                        //   alert($('#user').val())
                           var storage = window.sessionStorage;
                           storage.setItem('username',$('#user').val());
                          location.href='Student_home.html';
@@ -107,7 +106,7 @@
                           // alert($('#user').val())
                           var storage = window.sessionStorage;
                           storage.setItem('username',$('#user').val());
-                          location.href='Student_home.html';
+                          location.href='admin.html';
                           // window.local // location.href='Select_course';
                           // alert("学生")
                       }else {
