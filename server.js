@@ -1,6 +1,5 @@
 var express = require("express")
 let app = express();
-var jwt = require('jsonwebtoken');
 var session = require("express-session");
 app.use(session({
     secret:'secret',
