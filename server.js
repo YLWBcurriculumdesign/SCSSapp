@@ -34,6 +34,7 @@ app.post("/T_update_info",teacher.T_update_info)
 app.post("/T_update_pwd",teacher.T_update_pwd);
 app.get("/Admin_teacher",admin.admin_teacher);
 app.get("/Admin_student",admin.admin_student);
+app.get("/Admin_course",admin.admin_course);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;

@@ -30,4 +30,9 @@ exports.admin_student =(reg,res)=>{
         res.send(info)
     });
 };
+exports.admin_course =(reg,res)=>{
+    cdb.getCourse(function(info){
+        res.send(info)
+    });
+};
 

@@ -70,7 +70,7 @@
     <section class="menu-section">
         <h3 class="menu-section-title">学生管理</h3>
         <ul class="menu-section-list">
-            <li><a style="color: #2fa0ec"  href="admin_student.html">学生名单</a></li>
+            <li><a  href="admin_student.html">学生名单</a></li>
             <li><a href="admin_addS.html">添加学生信息</a></li>
             <li><a href="#">删除学生信息</a></li>
             <li><a href="#">修改学生信息</a></li>
@@ -80,7 +80,7 @@
     <section class="menu-section">
         <h3 class="menu-section-title">课程管理</h3>
         <ul class="menu-section-list">
-            <li><a href="admin_course.html">课程列表</a></li>
+            <li><a style="color: #2fa0ec"  href="admin_course.html">课程列表</a></li>
             <li><a href="admin_addC.html">添加课程信息</a></li>
             <li><a href="#">删除课程信息</a></li>
             <li><a href="#">修改课程信息</a></li>
@@ -117,31 +117,31 @@
         <table id="table_id">
 
             <tr>
-                <th>学生姓名</th>
-                <th>性别</th>
-                <th>学号</th>
-                <th>密码</th>
-                <th>年龄</th>
-                <th>学院</th>
-                <th>专业</th>
+                <th>课程编号</th>
+                <th>课程名称</th>
+                <th>课程类别</th>
+                <th>课程日期</th>
+                <th>课程时间</th>
+                <th>课程简介</th>
             </tr>
         </table>
     </div>
 </main>
 <script language="JavaScript" >
 
-    $.get("http://localhost:3030/Admin_student", {}, function (data) {  // data是服务器返回的数据
+    $.get("http://localhost:3030/Admin_course", {}, function (data) {  // data是服务器返回的数据
         // alert(data.length)
         var table = document.getElementById("table_id");
         for (var i = 0; i < data.length; i++) {
             var tr = table.insertRow();    //插入新行
-            tr.insertCell().innerHTML = data[i].StudentName;
-            tr.insertCell().innerHTML = data[i].StudentSex;
-            tr.insertCell().innerHTML = data[i].StudentID;
-            tr.insertCell().innerHTML = data[i].StudentPWD;
-            tr.insertCell().innerHTML = data[i].StudentAge;
-            tr.insertCell().innerHTML = data[i].college;
-            tr.insertCell().innerHTML = data[i].major;
+            var td = tr.insertCell();      //插入新单元格
+            td.innerText = data[i].Cid;
+            td.id = "Cid" + i;
+            tr.insertCell().innerHTML = data[i].Cname;
+            tr.insertCell().innerHTML = data[i].Ctype;
+            tr.insertCell().innerHTML = data[i].Cweek;
+            tr.insertCell().innerHTML = data[i].Ctime;
+            tr.insertCell().innerHTML = data[i].Cintroduction;
         }
 
     });
