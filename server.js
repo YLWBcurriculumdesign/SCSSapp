@@ -23,6 +23,7 @@ app.get("/Student_select_course",student.Student_select_course);
 app.post("/choosecourse",student.choosecourse);
 app.post("/myclass",student.myclass);
 app.post("/Teacher",teacher.teacher_message);
+app.post("/Teacher_my_course",teacher.teacher_mycourse);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;

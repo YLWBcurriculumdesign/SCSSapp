@@ -6,3 +6,8 @@ exports.teacher_message = (req,res)=>{
         res.send(info)
     });
 }
+exports.teacher_mycourse=(req,res)=>{
+    tdb.getTeachercourse(req.body,function(arr){
+        res.send(arr)
+    })
+};
