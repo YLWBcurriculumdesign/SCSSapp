@@ -25,3 +25,9 @@ exports.admin_teacher =(reg,res)=>{
     });
 };
 
+exports.admin_student =(reg,res)=>{
+    sdb.getStudent(function(info){
+        res.send(info)
+    });
+};
+

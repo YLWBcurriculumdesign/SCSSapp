@@ -29,6 +29,7 @@ app.post("/addC",admin.addC);
 app.post("/addT",admin.addT);
 app.post("/Teacher_my_course",teacher.teacher_mycourse);
 app.get("/Admin_teacher",admin.admin_teacher);
+app.get("/Admin_student",admin.admin_student);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;
