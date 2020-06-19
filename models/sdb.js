@@ -192,3 +192,30 @@ function getStudent(callback) {
 }
 
 exports.getStudent=getStudent;//管理员--学生信息
+
+//学生修改个人密码
+function update_pwd(data,callback) {
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+        host     : '39.101.177.156',
+        user     : 'root',
+        password : '555500',
+        database : 'studentsclass'
+    });
+    connection.connect();
+    var updataSql = 'UPDATE studata SET StudentPWD = ? WHERE StudentID = ?';
+    var updataSqlParams = [data.stupwd,data.stuid];
+
+    connection.query(updataSql,updataSqlParams,function (err, result) {
+        if(err){
+            var str = err.message;
+            console.log(str);
+            callback("-1");
+            connection.end();
+        }
+        console.log(data);
+        callback("1");
+        connection.end();
+    });
+}
+exports.update_pwd = update_pwd;

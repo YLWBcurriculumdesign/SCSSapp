@@ -60,9 +60,9 @@
     <section class="menu-section">
         <h3 class="menu-section-title">学生信息</h3>
         <ul class="menu-section-list">
-            <li><a style="color: #2fa0ec" href="#">基本信息</a></li>
-            <li><a href="./S_update_info">修改个人信息</a></li>
-            <li><a href="#">修改密码</a></li>
+            <li><a href="./Student_home.html">基本信息</a></li>
+            <li><a style="color: #2fa0ec" href="./S_update_info">修改个人信息</a></li>
+            <li><a href="./S_update_pswd.html">修改密码</a></li>
         </ul>
     </section>
 
@@ -92,7 +92,10 @@
         <span class="tooltip">点击打开</span>
     </button>
     <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
-        <ul style="list-style:none">
+        <div style="text-align:center;margin:0 auto;background: white;width: 300px;height: 400px;border-radius: 20px">
+            <p style="font-size: 20px;color: #2e6da4;margin-bottom: 50px">在这里更改你的个人信息：</p>
+            <p style="font-size: 15px;margin-top: -30px;color:red;">(您被限制修改自己的学号！！)</p>
+            <ul style="list-style:none">
             <li class="data_li">姓名：<input class="data_ip" type="text" id="stuname" ></li>
             <li class="data_li">学号：<input class="data_ip" type="text" disabled="true" id="stuid" ></li>
             <li class="data_li">性别：<input class="data_ip" type="text" id="stusex" ></li>
@@ -103,6 +106,7 @@
                 <button id="change" type="button" style="width:60px;height:35px;background-color: blueviolet; border-radius:3px;border: #afd9ee 1px solid " onclick="update()">修改</button>
             </li>
         </ul>
+    </div>
     </div>
 </main>
 <script language="JavaScript" >

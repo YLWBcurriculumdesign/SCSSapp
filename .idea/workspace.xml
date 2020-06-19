@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="6d792fb1-8eee-4e5b-9fd8-0acee53cc629" name="Default" comment="学生改信息" />
     <list default="true" id="6d792fb1-8eee-4e5b-9fd8-0acee53cc629" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/view/S_update_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -147,6 +148,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1dWkHSXGEnRxzb1ZmR5I2LdMkeU" />
   <component name="ProjectViewState">
@@ -441,6 +443,7 @@
       <workItem from="1592449303409" duration="27288000" />
       <workItem from="1592487683329" duration="536000" />
       <workItem from="1592539448297" duration="726000" />
+      <workItem from="1592548167310" duration="4301000" />
       <workItem from="1592548167310" duration="3846000" />
       <workItem from="1592539448297" duration="5057000" />
     </task>
@@ -577,6 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592487708944</updated>
     </task>
+    <task id="LOCAL-00020" summary="学生改信息">
+      <created>1592552432826</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1592552432826</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <task id="LOCAL-00020" summary="教师课表">
       <created>1592540189344</created>
       <option name="number" value="00020" />
@@ -681,6 +692,8 @@
     <MESSAGE value="教师课表" />
     <MESSAGE value="管理员界面教师信息" />
     <option name="LAST_COMMIT_MESSAGE" value="管理员界面教师信息" />
+    <MESSAGE value="学生改信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="学生改信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -964,9 +977,21 @@
       </provider>
     </entry>
   <component name="WindowStateProjectService">
+    <state x="295" y="0" key="CommitChangelistDialog2" timestamp="1592552429635">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="295" y="0" key="CommitChangelistDialog2/0.0.1280.689/1920.0.1600.870@0.0.1280.689" timestamp="1592552429635" />
     <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1592548716090">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1600.870@0.0.1280.689" timestamp="1592548716090" />
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2" timestamp="1592552477122">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2/0.0.1280.689/1920.0.1600.870@0.0.1280.689" timestamp="1592552477122" />
+    <state x="439" y="263" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592552690225">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="439" y="263" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689/1920.0.1600.870@0.0.1280.689" timestamp="1592552690225" />
   </component>
 </project>
