@@ -19,3 +19,9 @@ exports.addT = (req,res)=>{
         res.send(info)
     })
 };
+exports.admin_teacher =(reg,res)=>{
+    tdb.getTeacher(function(info){
+        res.send(info)
+    });
+};
+
