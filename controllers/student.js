@@ -31,7 +31,7 @@ exports.S_update_info = (req,res)=>{
     })
 };
 
-exports.S_update_pwd = (res,req)=>{
+exports.S_update_pwd = (req,res)=>{
     sdb.update_pwd(req.body,function (info) {
         res.send(info);
     })

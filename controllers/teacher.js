@@ -11,3 +11,13 @@ exports.teacher_mycourse=(req,res)=>{
         res.send(arr)
     })
 };
+exports.T_update_info = (req,res)=>{
+    tdb.update_info(req.body,function (info) {
+        res.send(info)
+    })
+};
+exports.T_update_pwd = (req,res)=>{
+    tdb.update_pwd(req.body,function (info) {
+        res.send(info);
+    })
+};
