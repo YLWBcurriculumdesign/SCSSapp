@@ -25,3 +25,8 @@ exports.myclass = (req,res)=>{
     })
 };
 
+exports.S_update_info = (req,res)=>{
+    sdb.update_info(req.body,function(info){
+        res.send(info)
+    })
+};
