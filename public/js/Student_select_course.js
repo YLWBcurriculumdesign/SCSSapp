@@ -5,6 +5,7 @@
             if (cc[i].checked) {
                 var cid = "Cid" + i;
                 CID = document.getElementById(cid).innerHTML;
+                // CID = document.getElementById(cid).innerText;    
                 var username =window.sessionStorage.getItem("username");
                 var data = { "username": username,"CID":CID}
                 $.ajax({

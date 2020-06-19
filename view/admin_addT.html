@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../public/css/main.css">
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="../public/css/styles.css" />
-    <!-- <link rel="stylesheet" id="templatecss" type="text/css" href="../public/css/basic-grey.css"> -->
 
     <style type="text/css">
         body {
@@ -46,88 +45,6 @@
         .slideout-open .slideout-menu {
             display: block;
         }
-
-
-
-        .smart-green{
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 500px;
-            background: #f8f8f8;
-            padding: 30px 30px 20px 30px;
-            font: 12px Arial, Helvetica, sans-serif;
-            color: #666;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-        }
-
-.smart-green h1{
-  font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
-  padding: 20px 0px 20px 40px;
-  display: block;
-  margin: -30px -30px 10px -30px;
-  color: #fff;
-  background: #9dc45f;
-  text-shadow: 1px 1px 1px #949494;
-  border-radius: 5px 5px 0px 0px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  border-bottom: 1px solid #89af4c;
-}
-
-.smart-green h1>span{
-  display: block;
-  font-size: 11px;
-  color: #fff;
-}
-
-.smart-green label{
-  display: block;
-  margin: 0px 0px 5px;
-}
-
-.smart-green label>span{
-  float: left;
-  margin-top: 10px;
-  color: #5e5e5e;
-}
-
-        .smart-green input[type="text"], .smart-green input[type="email"], .smart-green textarea, .smart-green select{
-            color: #555;
-            height: 30px;
-            line-height: 15px;
-            width: 100%;
-            padding: 0px 0px 0px 10px;
-            margin-top: 2px;
-            border: 1px solid #5e5e5e;
-            background: #fbfbfb;
-            outline: 0;
-            /* -webkit-box-shadow: inset 1px 1px 2px rgba{238,238,238,0.2};
-            box-shadow:inset 1px 1px 2px rgba{238,238,238,0.2};
-            font:normal 14px/14px Arial, Helvetica, sans-serif; */
-        }
-
-        .smart-green textarea{
-            height: 100px;
-            padding-top: 10px;
-        }
-
-        .smart-green button{
-            background-color: #9dc45f;
-            border-radius: 5px;
-            -webkit-border-radius:5px;
-            -moz-border-border-radius: 5px;
-            border: none;
-            padding: 10px 25px 10px 25px;
-            color: #fff;
-            text-shadow: 1px 1px 1px #949494;
-        }
-
-        .smart-green .button:hover{
-            background-color: #80a24a;
-        }
-
     </style>
 
 </head>
@@ -144,7 +61,7 @@
         <h3 class="menu-section-title">教师管理</h3>
         <ul class="menu-section-list">
             <li><a href="#">教师名单</a></li>
-            <li><a style="color: #2fa0ec" href="admin_addT.html">添加教师信息</a></li>
+            <li><a style="color: #2fa0ec"  href="admin_addT.html">添加教师信息</a></li>
             <li><a href="#">删除教师信息</a></li>
             <li><a href="#">修改教师信息</a></li>
         </ul>
@@ -170,15 +87,6 @@
         </ul>
     </section>
 
-    <!-- <section class="menu-section">
-        <h3 class="menu-section-title">网上选课</h3>
-        <ul class="menu-section-list">
-            <li><a href="student_select_course.html">正选</a></li>
-            <li><a href="#">退选</a></li>
-            <li><a href="student_my_course.html">个人课表</a></li>
-        </ul>
-    </section> -->
-
     <section class="menu-section">
         <h3 class="menu-section-title">退出系统</h3>
         <ul class="menu-section-list">
@@ -195,68 +103,91 @@
     <button class="btn-hamburger js-slideout-toggle">
         <span class="tooltip">点击打开</span>
     </button>
-    <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
-         <form action="" method="post" class="smart-green">
-                 <h1 class="smart-green h1">Contact Form
-                          <span class="smart-green h1>span">Please fill all the texts in the fields.</span>
-                 </h1>
-
-                 <label class=".smart-green label">
-                          <span class=".smart-green label>span">Your Name :</span>
-                          <input id="name" type="text" name="name" placeholder="Your Full Name" />
-                 </label>
-
-                 <label class=".smart-green label"> 
-                          <span class=".smart-green label>span">Your Email :</span>
-                          <input id="email" type="email" name="email" placeholder="Valid Email Address" />
-                 </label>
- 
-                 <label class=".smart-green label">
-                          <span class=".smart-green label>span">Message :</span>
-                          <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
-                 </label>
-
-                 <label class=".smart-green label"> 
-                          <span class=".smart-green label>span">Subject :</span><select name="selection">
-                                   <option value="Job Inquiry">Job Inquiry</option>
-                                   <option value="General Question">General Question</option>
-                          </select>
-                 </label>
- 
-                 <label class=".smart-green label">
-                          <span class=".smart-green label>span">&nbsp;</span>
-                          <input type="button" class="button" value="Send" />
-                 </label>
-         </form>
- 
+    
+    <div class="main" >
+        <div style="text-align:center;margin:0 auto;background: white;width: 300px;height: 400px;border-radius: 20px">
+        <p style="font-size: 20px;color: #2e6da4;margin-bottom: 50px">在这里添加教师信息：</p>
+    
+        <ul>
+            <li>
+              <label for="">教师工号：</label>
+              <input type="text" name="tnumber" id="tnumber">
+            </li>
+            <br>
+            <li>
+                <label for="">教师姓名：</label>
+                <input type="text" name="tname" id="tname">
+            </li>
+            <br>
+            <li>
+                <label for="">密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：</label>
+                <input type="text" name="tpwd" id="tpwd">
+            </li>
+            <br>
+            <li>
+                <label for="">性别&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：</label>
+                <input type="radio" name="sex" value="男">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="sex" value="女">女&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+            <br>
+            <li>
+                <label for="">教师简介：</label>
+                <input style="height: 80px;" type="text" name="tintroduction" id="tintroduction" >
+            </li>
+            <br>
+        </ul>
+              <br>
+              <input style="height: 30px; width: 100px;" id="btn" onclick="addT()" type="button" value="添加" >
+        </div>
     </div>
+    <script type="text/javascript" >
+    function addT() {
+        // alert("执行");
+            var tnumber = document.getElementById("tnumber").value;
+            // alert("执行");
+            var tname = document.getElementById("tname").value;
+            // alert("执行");
+            var tpwd = document.getElementById("tpwd").value;
+            // alert("执行");
+            var tsex = document.getElementsByName("sex");
+            if(tsex!=null){
+                for(i=0;i<tsex.length;i++){
+                    if(tsex[i].checked){
+                        tsex = tsex[i].value;           
+                    }
+                }
+            }
+            // alert("执行2");
+            var tintroduction = document.getElementById("tintroduction").value;
+            var data = {"tnumber":tnumber,"tname":tname,"tpwd":tpwd,"tsex":tsex,"tintroduction":tintroduction};
+            // alert("执行3");
+            $.ajax({
+                url:'http://localhost:3030/addT',
+                type:'POST',
+                data:data,
+                success: function (data) {  // data是服务器向客户端返回的数据info
+                    if (data == "1") {
+                        alert("添加成功")
+                    } else if (data == "-2") {
+                        alert("学号重复，请您重新输入！")
+                    } else {
+                        alert("添加失败")
+                    }
+                } });
+}
+    </script>
 </main>
 <script language="JavaScript" >
-
+//登录脚本
 var username =window.sessionStorage.getItem("username");
 
 if (username == null){
     alert("没有登录");
 location.href='index.html'
-}else {
-
-var data = { "username": username}
-$.ajax({
-    url:'http://localhost:3030/student_message',
-    type:'POST',
-    data:data,
-    success:function(data,status){
-        document.getElementById("StudentName").innerHTML=data[0].StudentName;
-        document.getElementById("StudentSex").innerHTML=data[0].StudentSex;
-        document.getElementById("StudentID").innerHTML=data[0].StudentID;
-        document.getElementById("StudentAge").innerHTML=data[0].StudentAge;
-        document.getElementById("college").innerHTML=data[0].college;
-        document.getElementById("major").innerHTML=data[0].major;
-    },
-});}
+}
 </script>
 
-
+//菜单脚本
 <script type="text/javascript" src="../public/js/slideout.min.js"></script>
 <script type="text/javascript">
     var slideout = new Slideout({

@@ -87,15 +87,6 @@
         </ul>
     </section>
 
-    <!-- <section class="menu-section">
-        <h3 class="menu-section-title">网上选课</h3>
-        <ul class="menu-section-list">
-            <li><a href="student_select_course.html">正选</a></li>
-            <li><a href="#">退选</a></li>
-            <li><a href="student_my_course.html">个人课表</a></li>
-        </ul>
-    </section> -->
-
     <section class="menu-section">
         <h3 class="menu-section-title">退出系统</h3>
         <ul class="menu-section-list">
@@ -112,12 +103,10 @@
     <button class="btn-hamburger js-slideout-toggle">
         <span class="tooltip">点击打开</span>
     </button>
-    <!-- <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
-        <h2>请输入学生信息</h2>
-    </div> -->
+    
     <div class="main" >
         <div style="text-align:center;margin:0 auto;background: white;width: 300px;height: 400px;border-radius: 20px">
-        <p style="font-size: 20px;color: #2e6da4;margin-bottom: 50px">在这里添加课程信息：</p>
+        <p style="font-size: 20px;color: #2e6da4;margin-bottom: 50px">在这里添加学生信息：</p>
     
         <ul>
             <li>
@@ -156,40 +145,60 @@
                 <input type="text" name="smajor" id="smajor">
             </li>
             <br>
-            <!-- <li>
-                <input id="add" type="button" value="添加" id="btn">
-            </li> -->
         </ul> 
-        <input style="height: 30px; width: 100px;" id="add" type="button" value="添加" id="btn">
+        <input style="height: 30px; width: 100px;" id="btn" type="button" onclick="addS()" value="添加" >
         </div>
     </div>
+    <script type="text/javascript" >
+    function addS() {
+        // alert("执行");
+            var snumber = document.getElementById("snumber").value;
+            // alert("执行");
+            var sname = document.getElementById("sname").value;
+            // alert("执行");
+            var spwd = document.getElementById("spwd").value;
+            // alert("执行");
+            var ssex = document.getElementsByName("sex");
+            if(ssex!=null){
+                for(i=0;i<ssex.length;i++){
+                    if(ssex[i].checked){
+                        ssex = ssex[i].value;           
+                    }
+                }
+            }
+            // alert("执行");
+            var sage = document.getElementById("sage").value;
+            var scollege = document.getElementById("scollege").value;
+            var smajor = document.getElementById("smajor").value;
+            var data = {"snumber":snumber,"sname":sname,"spwd":spwd,"ssex":ssex,"sage":sage,"scollege":scollege,"smajor":smajor};
+            console.log(data);
+            $.ajax({
+                url:'http://localhost:3030/addS',
+                type:'POST',
+                data:data,
+                success: function (data) {  // data是服务器向客户端返回的数据info
+                    if (data == "1") {
+                        alert("添加成功")
+                    } else if (data == "-2") {
+                        alert("学号重复，请您重新输入！")
+                    } else {
+                        alert("添加失败")
+                    }
+                } });
+}
+    </script>
 </main>
 <script language="JavaScript" >
-
+//登录脚本
 var username =window.sessionStorage.getItem("username");
 
 if (username == null){
     alert("没有登录");
 location.href='index.html'
-}else {
-
-var data = { "username": username}
-$.ajax({
-    url:'http://localhost:3030/student_message',
-    type:'POST',
-    data:data,
-    success:function(data,status){
-        document.getElementById("StudentName").innerHTML=data[0].StudentName;
-        document.getElementById("StudentSex").innerHTML=data[0].StudentSex;
-        document.getElementById("StudentID").innerHTML=data[0].StudentID;
-        document.getElementById("StudentAge").innerHTML=data[0].StudentAge;
-        document.getElementById("college").innerHTML=data[0].college;
-        document.getElementById("major").innerHTML=data[0].major;
-    },
-});}
+}
 </script>
 
-
+//菜单脚本
 <script type="text/javascript" src="../public/js/slideout.min.js"></script>
 <script type="text/javascript">
     var slideout = new Slideout({

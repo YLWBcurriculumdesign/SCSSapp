@@ -24,3 +24,4 @@ exports.myclass = (req,res)=>{
         res.send(info)
     })
 };
+

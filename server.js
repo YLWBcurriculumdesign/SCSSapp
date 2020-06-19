@@ -17,12 +17,16 @@ app.use(function(req,res,next){
 let student = require("./controllers/student")
 let index = require("./controllers/index")
 let teacher = require("./controllers/teacher")
+let admin = require("./controllers/admin")
 app.post("/index",index.dologin);
 app.post("/student_message",student.student_message);
 app.get("/Student_select_course",student.Student_select_course);
 app.post("/choosecourse",student.choosecourse);
 app.post("/myclass",student.myclass);
 app.post("/Teacher",teacher.teacher_message);
+app.post("/addS",admin.addS);
+app.post("/addC",admin.addC);
+app.post("/addT",admin.addT);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;
