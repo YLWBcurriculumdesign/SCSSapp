@@ -5,15 +5,21 @@
 }
 
 body{
-  background-color:rgb(155,157,159)
+  /*background-color:rgb(155,157,159)*/
+  background-image: url("../img/back.png");
 }
 h1{
   font-size: 2.5em;
+
+  color: gold;
+  letter-spacing: 0;
+  text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+
   font-style: italic;
   letter-spacing: .1em;
   line-height: 60px;
   padding-bottom: 30px;
-    color: red;
+    color:#46b8da;
 }
 .bgImg{
   width: 100%;
@@ -32,6 +38,7 @@ img{
   padding: 15px 25px;
   background-color: rgba(98,98,98,0.6);
   float: left;
+  border-radius: 15px;
   }
 
 @media(min-width:992px){
