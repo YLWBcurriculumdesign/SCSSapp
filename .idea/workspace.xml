@@ -193,11 +193,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
-  </component>
+  <component name="ProjectId" id="1dZ5er5r5ehg3tGTXs3LK8WMGxt" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -261,10 +257,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EnterpriseHome" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -715,6 +711,12 @@
     <MESSAGE value="管理员界面教师信息" />
     <MESSAGE value="管理员课程" />
     <option name="LAST_COMMIT_MESSAGE" value="管理员课程" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2367" y="32" key="CommitChangelistDialog2" timestamp="1592619939531">
+      <screen x="1920" y="0" width="1600" height="870" />
+    </state>
+    <state x="2367" y="32" key="CommitChangelistDialog2/0.0.1280.689/1920.0.1600.870@1920.0.1600.870" timestamp="1592619939531" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
