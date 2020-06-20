@@ -10,9 +10,19 @@ app.use(session({
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Origin','*');//跨域访问
-    next();
+// app.use(function(req,res,next){
+//     res.header('Access-Control-Allow-Origin','*');//跨域访问
+//     next();
+// });
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    if (req.method == 'OPTIONS') {
+        res.send(200);
+    } else {
+        next();
+    }
 });
 let student = require("./controllers/student")
 let index = require("./controllers/index")
