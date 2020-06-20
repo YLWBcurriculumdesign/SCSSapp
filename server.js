@@ -32,6 +32,7 @@ app.post("/S_update_info",student.S_update_info);
 app.post("/S_update_pwd",student.S_update_pwd);
 app.post("/T_update_info",teacher.T_update_info)
 app.post("/T_update_pwd",teacher.T_update_pwd);
+app.post("/T_update_course",teacher.T_update_course);
 app.get("/Admin_teacher",admin.admin_teacher);
 app.get("/Admin_student",admin.admin_student);
 app.get('/logout', function(req, res){

@@ -14,7 +14,7 @@ function teacher_message (data,callback) {
         if (err) throw err;
         connection.end();
         console.log(result);
-            console.log(result[0].TName);
+            console.log(result[0].Tname);
         callback(result);
 
     });
@@ -171,3 +171,31 @@ function update_pwd(data,callback) {
     });
 }
 exports.update_pwd = update_pwd;
+
+//老师更改课程
+function update_course(data,callback) {
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+        host     : '39.101.177.156',
+        user     : 'root',
+        password : '555500',
+        database : 'studentsclass'
+    });
+    connection.connect();
+    var updataSql = 'UPDATE course SET Cname = ?,Ctype = ?,Cweek = ?,Ctime = ?,Cintroduction = ? WHERE Cid = ? and Cteacher = ?';
+    var updataSqlParams = [data.Cname,data.Ctype,data.Cweek,data.Ctime,data.Cintroduction,data.Cid,data.username];
+
+    connection.query(updataSql,updataSqlParams,function (err, result) {
+        if(err){
+            var str = err.message;
+            console.log(str);
+            callback("-1");
+            connection.end();
+        }
+        console.log(data);
+        callback("1");
+        connection.end();
+    });
+}
+exports.update_course = update_course;
+
