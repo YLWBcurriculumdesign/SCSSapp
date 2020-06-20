@@ -40,6 +40,15 @@ app.get('/logout', function(req, res){
     req.session.error = null;
     res.redirect('/');
 });
+//删除
+app.get("/admin_delete_stu",admin.admindelstudent)
+app.post("/admin_delete_stu",admin.deletestudent)
+app.get("/admin_delete_tea",admin.admindeltea)
+app.post("/admin_delete_tea",admin.deletetea)
+app.get("/admin_delete_course",admin.admindelcourse)
+app.post("/admin_delete_course",admin.deleteCourse)
+app.post("/teacher_delete_course",teacher.deletecourse)
+app.post("/student_delete_course",student.deletecourse)
 app.listen(3030,()=>{
     console.log("服务器启动了~")
 });

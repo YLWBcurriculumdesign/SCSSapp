@@ -21,3 +21,9 @@ exports.T_update_pwd = (req,res)=>{
         res.send(info);
     })
 };
+//教师删除课程
+exports.deletecourse=(req,res)=>{
+    tdb.deletecourse(req.body,function(info) {
+        res.send(info);
+    })
+};

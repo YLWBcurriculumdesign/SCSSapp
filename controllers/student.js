@@ -36,3 +36,9 @@ exports.S_update_pwd = (req,res)=>{
         res.send(info);
     })
 };
+//学生退选课程
+exports.deletecourse=(req,res)=>{
+    cdb.deletecourse(req.body,function(info) {
+        res.send(info);
+    })
+};
