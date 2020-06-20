@@ -10,9 +10,19 @@ app.use(session({
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Origin','*');//跨域访问
-    next();
+// app.use(function(req,res,next){
+//     res.header('Access-Control-Allow-Origin','*');//跨域访问
+//     next();
+// });
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    if (req.method == 'OPTIONS') {
+        res.send(200);
+    } else {
+        next();
+    }
 });
 let student = require("./controllers/student")
 let index = require("./controllers/index")
@@ -35,11 +45,20 @@ app.post("/T_update_pwd",teacher.T_update_pwd);
 app.post("/T_update_course",teacher.T_update_course);
 app.get("/Admin_teacher",admin.admin_teacher);
 app.get("/Admin_student",admin.admin_student);
+app.get("/Admin_course",admin.admin_course);
 app.get('/logout', function(req, res){
     req.session.user = null;
     req.session.error = null;
     res.redirect('/');
 });
+//删除
+app.get("/admin_delete_stu",admin.admindelstudent)
+app.post("/admin_delete_stu",admin.deletestudent)
+app.get("/admin_delete_tea",admin.admindeltea)
+app.post("/admin_delete_tea",admin.deletetea)
+app.get("/admin_delete_course",admin.admindelcourse)
+app.post("/admin_delete_course",admin.deleteCourse)
+app.get("/Teacher_delete_course",teacher.teacher_course)
 app.listen(3030,()=>{
     console.log("服务器启动了~")
 });

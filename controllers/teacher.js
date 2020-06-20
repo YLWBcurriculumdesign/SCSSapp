@@ -26,3 +26,9 @@ exports.T_update_course = (req,res)=>{
         res.send(info);
     })
 }
+//教师删除课程
+exports.teacher_course=(req,res)=>{
+    tdb.getTeachercourse(req.body,function(arr){
+        res.send(arr)
+    })
+}

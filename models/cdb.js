@@ -66,3 +66,68 @@ function addC(data,callback){
 }
 
 exports.addC = addC;
+
+function getCourse(callback) {
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+        host     : '39.101.177.156',
+        user     : 'root',
+        password : '555500',
+        database : 'studentsclass'
+    });
+    connection.connect();
+    var  sql = 'select * from course,teacher where  course.Cteacher=teacher.Tid';
+//查
+    connection.query(sql,function (err, result) {
+        if (err) throw err;
+        connection.end();
+        callback(result);
+
+    });
+
+}
+exports.getCourse=getCourse;//管理员--学生信息
+//管理员查询全部课程信息
+function getcourses(callback) {
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+        host     : '39.101.177.156',
+        user     : 'root',
+        password : '555500',
+        database : 'studentsclass'
+    });
+    connection.connect();
+    var  sql = 'SELECT * FROM course';
+//查
+    connection.query(sql,function (err, result) {
+        if (err) throw err;
+        connection.end();
+        callback(result);
+    });
+}
+exports.getcourses=getcourses;
+//管理员删除课程信息
+function deletecourse(data,callback) {
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+        host     : '39.101.177.156',
+        user     : 'root',
+        password : '555500',
+        database : 'studentsclass'
+    });
+    connection.connect();
+    var deletecourseSql = 'DELETE FROM course WHERE Cid=?';
+    var deletecourseSqlParams = [data.Cid];
+    connection.query(deletecourseSql,deletecourseSqlParams,function (err, result) {
+        if(err){
+            var str = err.message;
+            console.log(str);
+            callback("-1");
+            connection.end();
+        }
+        console.log(data);
+        callback("1");
+        connection.end();
+    });
+}
+exports.deletecourse=deletecourse;

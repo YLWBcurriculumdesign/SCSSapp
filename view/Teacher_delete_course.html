@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教师课程</title>
+    <title>教师</title>
 
     <!--可无视-->
     <link rel="stylesheet" type="text/css" href="../public/css/default.css" />
@@ -60,7 +60,7 @@
     <section class="menu-section">
         <h3 class="menu-section-title">教师信息</h3>
         <ul class="menu-section-list">
-            <li><a   href="Teacher.html">基本信息</a></li>
+            <li><a style="color: #2fa0ec"  href="Teacher.html">基本信息</a></li>
             <li><a href="./T_update_info.html">修改个人信息</a></li>
             <li><a href="./T_update_pswd.html">修改密码</a></li>
         </ul>
@@ -69,10 +69,10 @@
     <section class="menu-section">
         <h3 class="menu-section-title">课程管理</h3>
         <ul class="menu-section-list">
-            <li><a style="color: #2fa0ec"  href="Teacher_my_course.html">我的课程</a></li>
-            <li><a href="">发布课程</a></li>
-            <li><a  href="./T_update_course.html">修改课程</a></li>
-            <li><a  href="">删除课程</a></li>
+            <li><a  href="">我的课程</a></li>
+            <li><a href="Teacher_addC.html">发布课程</a></li>
+            <li><a  href="">修改课程</a></li>
+            <li><a  href="Teacher_delete_course.html">删除课程</a></li>
         </ul>
     </section>
 
@@ -92,26 +92,9 @@
     <button style=" left: 0;top: 0; position: fixed;" class="btn-hamburger js-slideout-toggle">
         <span class="tooltip">点击打开</span>
     </button>
-    <div id="the_main_div" style="  width: 100%  ; text-align: center;">
-        <section class="DS_second_section">
-            <img id="bannerImg" src="../public/img/banner-1.png" alt="">
-            <!--实现轮播图的方式-->
-            <script>
-                var imgNumber = 1;
-                var bannerImg = document.getElementById("bannerImg");
-                function changeImg(){
-                    imgNumber++;
-                    if (imgNumber > 3){
-                        imgNumber = 1;
-                    }
-                    bannerImg.src = "../public/img/banner-"+imgNumber+".png"
-                }
-                setInterval(changeImg, 3000);
-            </script>
-        </section>
-        <table id="table_id">
+    <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
+        <table id="table_id" border="1">
 
-            <p>教师课程</p>
             <tr>
                 <th>课程编号</th>
                 <th>课程名称</th>
@@ -119,18 +102,38 @@
                 <th>课程日期</th>
                 <th>课程时间</th>
                 <th>课程简介</th>
-                <!--<th>选择</th>-->
+                <th>选择</th>
             </tr>
-
         </table>
+        <input style="border: blueviolet 1px solid;border-radius: 4px;background-color:  rgb(93, 218, 250);" id="deletecourse" type="button" onclick="deletecourse()" value="删除">
     </div>
 </main>
-
 <script type="text/javascript">
-
+    var username =window.sessionStorage.getItem("username");
+    if (username == null){
+        alert("没有登录");
+        location.href='index.html'
+    }else {
+        var data = { "username": username}
+        $.get("http://localhost:3030/Teacher_delete_course", {}, function (data) {  // data是服务器返回的数据
+            // alert(data.length)
+            var table = document.getElementById("table_id");
+            for (var i = 0; i < data.length; i++) {
+                var tr = table.insertRow();    //插入新行
+                var td = tr.insertCell();      //插入新单元格
+                td.innerText = data[i].Cid;
+                td.id = "Cid" + i;
+                tr.insertCell().innerHTML = data[i].Cname;
+                tr.insertCell().innerHTML = data[i].Ctype;
+                tr.insertCell().innerHTML = data[i].Cweek;
+                tr.insertCell().innerHTML = data[i].Ctime;
+                tr.insertCell().innerHTML = data[i].Cintroduction;
+                var td = tr.insertCell();
+                td.innerHTML = '<input name="aa"  type="checkbox" value="' + i + '">'
+            }
+        });}
 </script>
-<script type="text/javascript" src="../public/js/Teacher_my_course.js"></script>
-
+<script type="text/javascript" src="../public/js/Teacher_delete_course.js"></script>
 <script type="text/javascript" src="../public/js/slideout.min.js"></script>
 <script type="text/javascript">
     var slideout = new Slideout({
@@ -147,13 +150,12 @@
     document.querySelector('.menu').addEventListener('click', function(eve) {
         if (eve.target.nodeName === 'A') { slideout.close(); }
     });
-    // function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length && (t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
-    // window.onload = function(){
-        // aload();
-        // document.querySelector('.iphone').className += ' shown';
-    // }
+    function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length && (t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
+    window.onload = function(){
+        aload();
+        document.querySelector('.iphone').className += ' shown';
+    }
 </script>
-
 
 </body>
 </html>
