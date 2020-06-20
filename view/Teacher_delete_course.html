@@ -69,10 +69,10 @@
     <section class="menu-section">
         <h3 class="menu-section-title">课程管理</h3>
         <ul class="menu-section-list">
-            <li><a  href="">我的课程</a></li>
+            <li><a  href="Teacher_my_course.html">我的课程</a></li>
             <li><a href="Teacher_addC.html">发布课程</a></li>
             <li><a  href="">修改课程</a></li>
-            <li><a  href="Teacher_delete_course.html">删除课程</a></li>
+            <li><a  style="color: #2fa0ec"  href="Teacher_delete_course.html">删除课程</a></li>
         </ul>
     </section>
 
@@ -105,33 +105,38 @@
                 <th>选择</th>
             </tr>
         </table>
-        <input style="border: blueviolet 1px solid;border-radius: 4px;background-color:  rgb(93, 218, 250);" id="deletecourse" type="button" onclick="deletecourse()" value="删除">
+        <input style="border: blueviolet 1px solid;border-radius: 4px;background-color:  rgb(93, 218, 250);" id="deletecourse" type="button" onclick="Tdeletecourse()" value="删除">
     </div>
 </main>
 <script type="text/javascript">
-    var username =window.sessionStorage.getItem("username");
+    var username = window.sessionStorage.getItem("username");
     if (username == null){
         alert("没有登录");
         location.href='index.html'
     }else {
-        var data = { "username": username}
-        $.get("http://localhost:3030/Teacher_delete_course", {}, function (data) {  // data是服务器返回的数据
-            // alert(data.length)
-            var table = document.getElementById("table_id");
-            for (var i = 0; i < data.length; i++) {
-                var tr = table.insertRow();    //插入新行
-                var td = tr.insertCell();      //插入新单元格
-                td.innerText = data[i].Cid;
-                td.id = "Cid" + i;
-                tr.insertCell().innerHTML = data[i].Cname;
-                tr.insertCell().innerHTML = data[i].Ctype;
-                tr.insertCell().innerHTML = data[i].Cweek;
-                tr.insertCell().innerHTML = data[i].Ctime;
-                tr.insertCell().innerHTML = data[i].Cintroduction;
-                var td = tr.insertCell();
-                td.innerHTML = '<input name="aa"  type="checkbox" value="' + i + '">'
+        var data = {"username": username}
+        $.ajax({
+            url: 'http://localhost:3030/Teacher_my_course',
+            type: 'POST',
+            data: data,
+            success: function (data) {  // data是服务器向客户端返回的数据info
+                var table = document.getElementById("table_id");
+                for (var i = 0; i < data.length; i++) {
+                    var tr = table.insertRow();
+                    var td = tr.insertCell();
+                    td.innerText = data[i].Cid;
+                    td.id = "Cid" + i;
+                    tr.insertCell().innerHTML = data[i].Cname;
+                    tr.insertCell().innerHTML = data[i].Ctype;
+                    tr.insertCell().innerHTML = data[i].Cweek;
+                    tr.insertCell().innerHTML = data[i].Ctime;
+                    tr.insertCell().innerHTML = data[i].Cintroduction;
+                    var td = tr.insertCell();
+                    td.innerHTML = '<input name="aa"  type="checkbox" value="' + i + '">'
+                }
             }
-        });}
+        });
+    }
 </script>
 <script type="text/javascript" src="../public/js/Teacher_delete_course.js"></script>
 <script type="text/javascript" src="../public/js/slideout.min.js"></script>

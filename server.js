@@ -42,6 +42,7 @@ app.post("/S_update_info",student.S_update_info);
 app.post("/S_update_pwd",student.S_update_pwd);
 app.post("/T_update_info",teacher.T_update_info)
 app.post("/T_update_pwd",teacher.T_update_pwd);
+app.post("/T_update_course",teacher.T_update_course);
 app.get("/Admin_teacher",admin.admin_teacher);
 app.get("/Admin_student",admin.admin_student);
 app.get("/Admin_course",admin.admin_course);
@@ -57,7 +58,8 @@ app.get("/admin_delete_tea",admin.admindeltea)
 app.post("/admin_delete_tea",admin.deletetea)
 app.get("/admin_delete_course",admin.admindelcourse)
 app.post("/admin_delete_course",admin.deleteCourse)
-app.get("/Teacher_delete_course",teacher.teacher_course)
+app.post("/teacher_delete_course",teacher.deletecourse)
+app.post("/student_delete_course",student.deletecourse)
 app.listen(3030,()=>{
     console.log("服务器启动了~")
 });

@@ -20,9 +20,7 @@ if (username == null){
                 tr.insertCell().innerHTML = data[i].Cweek;
                 tr.insertCell().innerHTML = data[i].Ctime;
                 tr.insertCell().innerHTML = data[i].Cintroduction;
-
             }
-
         }
     });
 }
