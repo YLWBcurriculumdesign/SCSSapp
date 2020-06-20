@@ -27,3 +27,8 @@ exports.deletecourse=(req,res)=>{
         res.send(info);
     })
 };
+exports.T_update_course = (req,res)=>{
+    tdb.update_course(req.body,function (info) {
+        res.send(info);
+    })
+};
