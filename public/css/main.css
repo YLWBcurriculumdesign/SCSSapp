@@ -5,6 +5,7 @@ table {
     margin: 20px auto;
     border-collapse: collapse;
     font-family: Futura, Arial, sans-serif;
+    margin-top: 60px;
 }
 
 
@@ -58,4 +59,11 @@ h1,h3 {
     border-radius: 5px;
     height: 50px;
     width: 163px;
+}
+#bannerImg{
+    border-radius: 5px;
+    padding-bottom: 2px;
+}
+.DS_second_section{
+    border-bottom: #8c8c8c 2px solid;
 }
