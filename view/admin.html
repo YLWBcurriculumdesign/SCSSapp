@@ -110,7 +110,23 @@
     <button class="btn-hamburger js-slideout-toggle">
         <span class="tooltip">点击打开</span>
     </button>
-    <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
+    <div id="the_main_div" style="  width: 100%  ; text-align: center;">
+        <section class="DS_second_section">
+            <img id="bannerImg" src="../public/img/banner-1.png" alt="">
+            <!--实现轮播图的方式-->
+            <script>
+                var imgNumber = 1;
+                var bannerImg = document.getElementById("bannerImg");
+                function changeImg(){
+                    imgNumber++;
+                    if (imgNumber > 3){
+                        imgNumber = 1;
+                    }
+                    bannerImg.src = "../public/img/banner-"+imgNumber+".png"
+                }
+                setInterval(changeImg, 3000);
+            </script>
+        </section>
          <table id="table_id">
 
                  <tr>
