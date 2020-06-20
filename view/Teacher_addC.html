@@ -93,44 +93,43 @@
         <span class="tooltip">点击打开</span>
     </button>
     <div id="the_main_div" style="  left:0;top:50px;position: fixed; width: 100%  ; text-align: center;">
-        <ul>
-            <li>
-              <label for="">课程号&nbsp;&nbsp;&nbsp;：</label>
-              <input type="text" name="cnumber" id="cnumber">
-            </li>
-            <br>
-            <li>
-                <label for="">课程名&nbsp;&nbsp;&nbsp;：</label>
-                <input type="text" name="cname" id="cname">
-            </li>
-            <br>
-            <li>
-                <label for="">课程类型：</label>
-                <input type="text" name="ctype" id="ctype">
-            </li>
-            <br>
-            <li>
-              <label for="">课程日期：</label>
-              <input type="text" name="cweek" id="cweek">
-          </li>
-          <br>
-          <li>
-              <label for="">课程时间：</label>
-              <input type="text" name="ctime" id="ctime">
-          </li>
-          <br>
-            <li>
-                <label for="">课程简介：</label>
-                <input type="text" name="cintroduction" id="cintroduction">
-            </li>
-            <br>
-            <!-- <li>
-              <label for="">教师工号：</label>
-              <input type="text" name="cteacher" id="cteacher">
-          </li> -->
-          <br>
-        </ul> 
-        <input style="height: 30px; width: 100px;" id="btn" type="button" onclick="addC()" value="添加" >
+        <div
+            style="text-align:center;margin:0 auto;background: white;width: 300px;height: 400px;border-radius: 20px">
+            <p style="font-size: 20px;color: #2e6da4;margin-bottom: 50px">添加课程信息：</p>
+            <!-- <p style="font-size: 15px;margin-top: -30px;color:red;">(您被限制修改自己的工号！！)</p> -->
+
+            <ul style="list-style: none">
+                <li class="data_li">
+                    <label for="">课程号&nbsp;&nbsp;&nbsp;：</label>
+                    <input class="data_ip" type="text" name="cnumber" id="cnumber">
+                </li>
+                <li class="data_li">
+                    <label for="">课程名&nbsp;&nbsp;&nbsp;：</label>
+                    <input class="data_ip" type="text" name="cname" id="cname">
+                </li>
+                <li class="data_li">
+                    <label for="">课程类型：</label>
+                    <input class="data_ip" type="text" name="ctype" id="ctype">
+                </li>
+                <li class="data_li">
+                    <label for="">课程日期：</label>
+                    <input class="data_ip" type="text" name="cweek" id="cweek">
+                </li>
+                <li class="data_li">
+                    <label for="">课程时间：</label>
+                    <input class="data_ip" type="text" name="ctime" id="ctime">
+                </li>
+                <li class="data_li">
+                    <label for="">课程简介：</label>
+                    <br>
+                    <textarea style="width: 200px;height: 80px;" class="data_ip" type="text" name="cintroduction" id="cintroduction"></textarea>
+                </li>
+                <li style="margin-top: 45px;margin-left: 175px">
+                    <input style="width:60px;height:35px;background-color: blueviolet; border-radius:3px;border: #afd9ee 1px solid " id="btn" type="button" onclick="addC()" value="添加">
+                </li>
+            </ul>
+
+        </div>
     </div>
 </main>
 
