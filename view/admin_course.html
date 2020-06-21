@@ -81,9 +81,9 @@
         <section class="menu-section">
             <h3 class="menu-section-title">课程管理</h3>
             <ul class="menu-section-list">
-                <li><a href="admin_course.html">课程列表</a></li>
+                <li><a style="color: #2fa0ec"  href="admin_course.html">课程列表</a></li>
                 <li><a href="admin_addC.html">添加课程信息</a></li>
-                <li><a style="color: #2fa0ec" href="admin_delete_course.html">删除课程信息</a></li>
+                <li><a href="admin_delete_course.html">删除课程信息</a></li>
             </ul>
         </section>
 
@@ -145,7 +145,7 @@
     </main>
     <script language="JavaScript">
 
-        $.get("http://localhost:3030/Admin_course", {}, function (data) {  // data是服务器返回的数据
+        $.get("http://39.101.177.156:3030/Admin_course", {}, function (data) {  // data是服务器返回的数据
             // alert(data.length)
             var table = document.getElementById("table_id");
             for (var i = 0; i < data.length; i++) {

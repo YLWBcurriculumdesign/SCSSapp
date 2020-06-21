@@ -8,7 +8,7 @@ function deletestudent() {
             var username =window.sessionStorage.getItem("username");
             var data = { "username": username,"StudentID":StudentID}
             $.ajax({
-                url:'http://localhost:3030/admin_delete_stu',
+                url:'http://39.101.177.156:3030/admin_delete_stu',
                 type:'POST',
                 data:data,
                 success: function (data) {  // data是服务器向客户端返回的数据info

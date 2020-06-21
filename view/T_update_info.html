@@ -127,7 +127,7 @@
 
             var data = { "username": username };
             $.ajax({
-                url: 'http://localhost:3030/Teacher',
+                url: 'http://39.101.177.156:3030/Teacher',
                 type: 'POST',
                 data: data,
                 success: function (data, status) {
@@ -141,7 +141,7 @@
 
         function update() {
             $.ajax({
-                url: 'http://localhost:3030/T_update_info',
+                url: 'http://39.101.177.156:3030/T_update_info',
                 type: 'POST',
                 data: {
                     "teaname": document.getElementById("teaname").value,

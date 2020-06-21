@@ -16,7 +16,7 @@ function addS() {
             var data = {"snumber":snumber,"sname":sname,"spwd":spwd,"ssex":ssex,"sage":sage,"scollege":scollege,"smajor":smajor};
             console.log(data);
             $.ajax({
-                url:'http://localhost:3030/addS',
+                url:'http://39.101.177.156:3030/addS',
                 type:'POST',
                 data:data,
                 success: function (data) {  // data是服务器向客户端返回的数据info

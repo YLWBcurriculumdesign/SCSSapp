@@ -133,7 +133,7 @@
             alert("没有登录");
             location.href = 'index.html'
         } else {
-            $.get("http://localhost:3030/Student_select_course", {}, function (data) {  // data是服务器返回的数据
+            $.get("http://39.101.177.156:3030/Student_select_course", {}, function (data) {  // data是服务器返回的数据
                 // alert(data.length)
                 var table = document.getElementById("table_id");
                 for (var i = 0; i < data.length; i++) {

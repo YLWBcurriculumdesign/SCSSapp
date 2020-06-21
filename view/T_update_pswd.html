@@ -123,7 +123,7 @@
         } else {
             var data = { "username": username };
             $.ajax({
-                url: 'http://localhost:3030/Teacher',
+                url: 'http://39.101.177.156:3030/Teacher',
                 type: 'POST',
                 data: data,
                 success: function (data, status) {
@@ -134,7 +134,7 @@
         function update() {
             if (document.getElementById("teapwd").value == document.getElementById("current_pwd").value) {
                 $.ajax({
-                    url: 'http://localhost:3030/T_update_pwd',
+                    url: 'http://39.101.177.156:3030/T_update_pwd',
                     type: 'POST',
                     data: {
                         "teapwd": document.getElementById("new_pwd").value,

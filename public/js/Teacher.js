@@ -8,7 +8,7 @@ if (username == null){
 
     var data = { "username": username}
     $.ajax({
-        url:'http://localhost:3030/Teacher',
+        url:'http://39.101.177.156:3030/Teacher',
         type:'POST',
         data:data,
         success:function(data,status){
